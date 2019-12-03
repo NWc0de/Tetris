@@ -132,7 +132,7 @@ public class TetrisGUI implements Observer {
         myUserBoard = new Board();
         myUserBoard.addObserver(this);
        
-        myMainFrame.add(buildControlPanel());
+        myMainFrame.add(buildControlPanel(), BorderLayout.CENTER);
         myMainFrame.add(myGraphicPanel, BorderLayout.EAST);
         
         addKeyListeners();
@@ -184,11 +184,13 @@ public class TetrisGUI implements Observer {
         controlPanel.add(nextPieceContainer);
         
         JPanel buttonPanel = new JPanel();
+        JPanel buttonWrapper = new JPanel();
         buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.Y_AXIS));
         addButtonsToList();
         addButtonListeners();
         packButtons(buttonPanel);
-        controlPanel.add(buttonPanel);
+        buttonWrapper.add(buttonPanel, BorderLayout.CENTER);
+        controlPanel.add(buttonWrapper);
 
         JPanel theScorePanel = new JPanel();
         myScoreLabel = new JLabel("Current Score: " + myUserScore);
@@ -274,7 +276,7 @@ public class TetrisGUI implements Observer {
     private Dimension getPreferredDim() {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         int prefWidth = (int) (screenSize.getWidth() * .50);
-        int prefHeight = (int) (screenSize.getHeight() * .90);
+        int prefHeight = (int) (screenSize.getHeight() * .95);
         return new Dimension(prefWidth, prefHeight);
     }
     
