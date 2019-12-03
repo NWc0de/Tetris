@@ -349,7 +349,7 @@ public class TetrisGUI implements Observer {
         theBuild.append("Shift peice left: a or A or (left arrow key)\n");
         theBuild.append("Shift piece right: d or D or (right arrow key)\n");
         theBuild.append("Step piece down: s or S or (down arrow key)\n");
-        theBuild.append("Rotate piece: w or W or (up arrow key\n");
+        theBuild.append("Rotate piece: w or W or (up arrow key)\n");
         theBuild.append("Drop piece: (space bar)\n");
         theBuild.append("Pause game: p or P\n");
         return theBuild.toString();
