@@ -215,7 +215,6 @@ public class TetrisGUI implements Observer {
         thePanel.add(Box.createRigidArea(new Dimension(0, 10)));
         thePanel.add(myAutoStepBox);
         thePanel.add(myAudioBox);
-        thePanel.add(Box.createRigidArea(new Dimension(0, 100)));
     }
     
     /**
