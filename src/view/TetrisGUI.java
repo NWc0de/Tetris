@@ -276,7 +276,7 @@ public class TetrisGUI implements Observer {
     private Dimension getPreferredDim() {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         int prefWidth = (int) (screenSize.getWidth() * .50);
-        int prefHeight = (int) (screenSize.getHeight() * .95);
+        int prefHeight = (int) (screenSize.getHeight() * .90);
         return new Dimension(prefWidth, prefHeight);
     }
     
