@@ -94,7 +94,7 @@ public class TetrisGUI implements Observer {
     private final JRadioButton myAudioBox = new JRadioButton("Audio", true);
     
     /** The timer to orchestrate auto stepping. */
-    private final Timer myAutoStepTimer = new Timer(500, new ButtonListener());
+    private final Timer myAutoStepTimer;
     
     /** Label to display user score data. */
     private JLabel myScoreLabel = new JLabel();
@@ -131,6 +131,9 @@ public class TetrisGUI implements Observer {
         
         myUserBoard = new Board();
         myUserBoard.addObserver(this);
+        myAutoStepTimer = new Timer(500, event -> {
+            myUserBoard.step();
+        });
        
         myMainFrame.add(buildControlPanel(), BorderLayout.CENTER);
         myMainFrame.add(myGraphicPanel, BorderLayout.EAST);
