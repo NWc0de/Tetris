@@ -224,7 +224,6 @@ public class TetrisGUI implements Observer {
      * Sets the buttons color, style, and dimensions
      */
     private void styleButtons() {
-        final int stdHeight = 26;
         for (JButton b : myAllButtons) {
             b.setForeground(new Color(2, 79, 105));
             b.setFocusPainted(false);
@@ -439,10 +438,8 @@ public class TetrisGUI implements Observer {
          */
         @Override
         public void actionPerformed(final ActionEvent theEvent) {
-            if ((theEvent.getSource() == myStepButton && myIsGameOn) ||
-                            theEvent.getSource() == myAutoStepTimer) {
+            if ((theEvent.getSource() == myStepButton && myIsGameOn)) {
                 myUserBoard.step();
-                // sound here ? 
             } else if (theEvent.getSource() == myStartButton && !myIsGameOn) {
                 initGame();
             } else if (theEvent.getSource() == myStopButton && myIsGameOn) {
